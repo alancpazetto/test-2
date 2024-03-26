@@ -2,6 +2,18 @@
   "compilerOptions": {
     "baseUrl": "./",
     "rootDir": ".",
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "paths": {
+      "@test-2/login": ["modules/login/src/index.ts"],
+      "@test-2/shared/components": ["modules/shared/components/src/index.ts"],
+      "@test-2/shared/date-utils": ["modules/shared/date-utils/src/index.ts"],
+      "@test-2/user/common/user-ui": [
+        "modules/user/common/user-ui/src/index.ts"
+      ],
+      "@test-2/user/shared/user-manager": [
+        "modules/user/shared/user-manager/src/index.ts"
+      ],
+      "@test-2/user/user-list": ["modules/user/user-list/src/index.ts"]
+    }
   }
 }
