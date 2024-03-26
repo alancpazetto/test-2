@@ -39,6 +39,7 @@ jobs:
       pr-preview-build-dir: ./dist/
       
       # Addictional options
+      # pnpm-version: '8.5.1'
       # run-unit-test-parallel: true
       # run-unit-test-parallel-shard: 16
     secrets:

@@ -12,13 +12,17 @@
             "enforceBuildableLibDependency": true,
             "allow": [],
             "depConstraints": [
-              {
-                "sourceTag": "app",
-                "onlyDependOnLibsWithTags": ["module:*"]
-              },
+              { "sourceTag": "app", "onlyDependOnLibsWithTags": ["module:*"] },
               {
                 "sourceTag": "scope:root",
                 "onlyDependOnLibsWithTags": ["module:shared"]
+              },
+              {
+                "sourceTag": "scope:user",
+                "onlyDependOnLibsWithTags": [
+                  "module:common:user",
+                  "module:shared"
+                ]
               }
             ]
           }

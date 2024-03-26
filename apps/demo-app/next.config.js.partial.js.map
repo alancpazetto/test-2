@@ -1,0 +1,1 @@
+{"version":3,"file":"next.config.js.partial.js","sourceRoot":"","sources":["../../../../../../../packages/journey/src/generators/app/files/next.config.js.partial.ts"],"names":[],"mappings":";;;AACA,SAAgB,iBAAiB,CAAC,MAAc;IAC9C,OAAO;QACL,MAAM,EAAE,KAAK,MAAM,iBAAiB;QACpC,WAAW,EAAE,OAAO;QACpB,KAAK,EAAE,uEAAuE;QAC9E,KAAK,EAAE;YACL,MAAM,EAAE,QAAQ;SACjB;KACF,CAAC;AACJ,CAAC;AATD,8CASC"}
