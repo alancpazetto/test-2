@@ -1,0 +1,22 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: "projeto-test"
+  namespace: banking
+  description: "Descricao do projeto"
+  tags:
+    - web-platform
+    - banking
+    - front-end
+    - journey
+  links:
+    - url: "https://github.com/alancpazetto/test"
+      title: "Documentação do Projeto"
+  annotations:
+    backstage.io/techdocs-ref: dir:.
+spec:
+  type: website
+  lifecycle: experimental
+  owner: group:default/web-platform
+  providesApis:
+    - projeto-test

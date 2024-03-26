@@ -1,0 +1,45 @@
+name: 🧙 Continuous Integration
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [main, rc, next, 'feat/**']
+    types:
+      - opened
+      - edited
+      - synchronize
+      - ready_for_review
+      - reopened
+
+permissions: write-all
+
+env:
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+defaults:
+  run:
+    shell: bash
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    name: Run Checks
+    uses: stone-payments/github-actions-workflows/.github/workflows/front-end-ci.yml@front-end-v3
+    with:
+      application-type: static
+      node-version: '.nvmrc'
+      dry-run-publish: true
+      
+      pr-preview-label: 'pr-preview'
+      
+      pr-preview-build-dir: ./dist/
+      
+      # Addictional options
+      # run-unit-test-parallel: true
+      # run-unit-test-parallel-shard: 16
+    secrets:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

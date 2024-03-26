@@ -1,0 +1,22 @@
+name: 👩‍💻 Journey Pull Request CLI
+
+on:
+  issue_comment:
+    types: [created, edited]
+
+permissions: write-all
+
+env:
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  pull-request-cli:
+    name: Run Checks
+    uses: stone-payments/journey-cli/.github/workflows/pull-request-cli.yaml@main
+    with:
+      node-version: '.nvmrc'
+      journey-version: latest
+    secrets:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      CUSTOM_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
