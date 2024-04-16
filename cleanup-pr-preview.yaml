@@ -1,0 +1,28 @@
+# name: 🚀 Continuous Delivery (Cleanup)
+
+# on:
+#   pull_request_target:
+#     types:
+#       - closed
+
+# permissions: write-all
+
+# defaults:
+#   run:
+#     shell: bash
+
+# concurrency:
+#   group: cd-${{ github.ref }}
+#   cancel-in-progress: true
+
+# jobs:
+#   release:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - run: echo "Ran in PR scenary"
+
+#   cleanup_pr_preview:
+#     if: ${{ github.event_name == 'pull_request_target' }}
+#     runs-on: ubuntu-latest
+#     steps:
+#       - run: echo "Ran after merged"
